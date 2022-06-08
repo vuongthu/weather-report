@@ -4,40 +4,67 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="styles/index.css" rel="stylesheet">
+    <link href="styles/index.css" rel="stylesheet" />
     <title>how's the weather today?</title>
   </head>
   <body>
     <main>
       <section id="box-one">
-        <div><img id="location-img" src="assets/location.png" alt="location place"></div>
-        <div><h2 id="location">San Diego, CA</h2></div>
+        <div>
+          <h2>
+            <span>
+              <img
+                id="location-img"
+                src="assets/location.png"
+                alt="location place"
+              />
+            </span>
+            <span>San Diego, CA</span>
+          </h2>
+        </div>
         <div><p id="time">1:48 pm PT</p></div>
         <div><p id="date">June 7, 2022</p></div>
-        <div><img id="search-img" src="assets/search.png" alt="search icon"><input id="search-location" type="text" placeholder="city" /><img id="reset-img" src="assets/reset.png" alt="reset arrow"></div>
+        <div>
+          <img
+            id="search-img"
+            src="assets/search.png"
+            alt="search icon"
+          /><input id="search-location" type="text" placeholder="city" /><img
+            id="reset-img"
+            src="assets/reset.png"
+            alt="reset arrow"
+          />
+        </div>
       </section>
 
       <section id="box-two">
         <div><h2 id="sky-header">sky</h2></div>
         <div><label for="weather">what does the sky look like?</label></div>
-        <div><select name="weather" id="weather">
-          <option value="sunny">sunny</option>
-          <option value="stormy">stormy</option>
-          <option value="rainy">rainy</option>
-          <option value="cloudy">cloudy</option>
-          <option value="snowy">snowy</option>
-          <option value="windy">windy</option>
-          <option value="starry">starry</option>
-        </select></div>
+        <div>
+          <select name="weather" id="weather">
+            <option value="sunny">sunny</option>
+            <option value="stormy">stormy</option>
+            <option value="rainy">rainy</option>
+            <option value="cloudy">cloudy</option>
+            <option value="snowy">snowy</option>
+            <option value="windy">windy</option>
+            <option value="starry">starry</option>
+          </select>
+        </div>
       </section>
 
       <section id="box-three">
-        <div><img id="weather-img" src="assets/sunny.png" alt="sun icon"></div>
+        <div>
+          <img id="weather-img" src="assets/sunny.png" alt="sun icon" />
+        </div>
         <div><h2 id="temperature">79º</h2></div>
-        <div><img id="up-arrow" src="assets/up.png" alt="up arrow"></div>
-        <div><img id="down-arrow" src="assets/down.png" alt="down arrow"></div>
+        <div><img id="up-arrow" src="assets/up.png" alt="up arrow" /></div>
+        <div>
+          <img id="down-arrow" src="assets/down.png" alt="down arrow" />
+        </div>
         <div><button id="get-data" type="button">get RT data</button></div>
       </section>
     </main>
+    <script src="/src/index.js"></script>
   </body>
 </html>

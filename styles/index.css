@@ -1,0 +1,51 @@
+html {
+  background: url(/assets/sunny.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+    color: white;
+}
+
+main {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+section { 
+    border-radius: 2em;
+    margin-top: 6%;
+    background: rgba(128, 128, 128, 0.3);
+}
+
+#box-one {
+    grid-row: 1;
+    grid-column: 1 / span 2;
+    padding: 3%;
+    height: 25em;
+    width: 70em;
+}
+
+#box-two {
+    grid-row: 2;
+    grid-column: 1;
+    padding: 3%;
+    height: 15em;
+    width: 30em;
+}
+
+#box-three {
+    grid-row: 2;
+    grid-column: 2 / 3;
+    padding: 3%;
+    height: 15em;
+    width: 37em;
+}
+

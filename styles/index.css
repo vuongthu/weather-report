@@ -204,13 +204,17 @@ label {
   background-color: rgba(200, 200, 200, 0.5);
 }
 
-footer {
-  padding-top: 30px;
-  margin-top: 2vh;
-  margin-bottom: 2%;
+#reset-button {
+  height: 3em;
 }
 
-.disclaimer {
+footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: rgba(128, 128, 128, 0.3);
+}
+
+#disclaimer {
   font-family: 'Barlow Semi Condensed', sans-serif;
   text-transform: uppercase;
   font-size: 1em;

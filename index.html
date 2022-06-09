@@ -22,12 +22,12 @@
             <span id="location">San Diego, CA</span>
           </h2>
         </div>
-        <div><p id="time">1:48 pm PT</p></div>
+        <div><p id="time">1:48 pm</p></div>
         <div><p id="date">June 7, 2022</p></div>
         <div id="search-group">
           <img id="search-img" src="assets/search.png" alt="search icon" />
           <input id="search-location" type="text" placeholder="city" />
-          <button class="icon-buttons">
+          <button id="reset-button" class="icon-buttons">
             <img id="reset-img" src="assets/reset.png" alt="reset arrow" />
           </button>
         </div>
@@ -60,12 +60,12 @@
         <div><span id="temperature">75°</span></div>
         <div id="arrows">
           <div>
-            <button class="icon-buttons">
+            <button id="up-button" class="icon-buttons">
               <img id="up-arrow" src="assets/up.png" alt="up arrow" />
             </button>
           </div>
           <div>
-            <button class="icon-buttons">
+            <button id="down-button" class="icon-buttons">
               <img id="down-arrow" src="assets/down.png" alt="down arrow" />
             </button>
           </div>
@@ -76,7 +76,7 @@
       </section>
     </main>
     <footer>
-        <p class="disclaimer">© Thu Vuong 2022 All Rights Reserved</p>
+        <p id="disclaimer">© Thu Vuong 2022 All Rights Reserved</p>
       </footer>
     <script src="/src/index.js"></script>
     <script src="./node_modules/axios/dist/axios.min.js"></script>

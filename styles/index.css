@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@100&family=Fjalla+One&family=Yeseva+One&display=swap');
+
 html {
-  background: url(/assets/sunny.jpg) no-repeat center center fixed;
+  background: url(/assets/warm.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -7,45 +9,211 @@ html {
 }
 
 main {
-    margin-left: auto;
-    margin-right: auto;
-    width: 60vw;
-    color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60vw;
+  color: white;
 }
 
 main {
-    display: grid;
-    grid-template: 1fr 1fr / 1fr 1fr 1fr;
-    justify-content: center;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  justify-content: center;
 }
 
-section { 
-    border-radius: 2em;
-    margin-top: 6%;
-    background: rgba(128, 128, 128, 0.3);
+section {
+  border-radius: 2em;
+  margin-top: 6%;
+  background: rgba(128, 128, 128, 0.3);
 }
 
 #box-one {
-    grid-row: 1;
-    grid-column: 1 / span 2;
-    padding: 3%;
-    height: 25em;
-    width: 70em;
+  grid-row: 1;
+  grid-column: 1 / span 2;
+  padding: 3%;
+  height: 25em;
+  width: 70em;
+}
+
+#box-one span {
+    vertical-align: middle;
+}
+
+#box-one div {
+  margin-bottom: -1.1em;
+  text-align: center;
+}
+
+#weather-img {
+  width: 9em;
+  height: auto;
 }
 
 #box-two {
-    grid-row: 2;
-    grid-column: 1;
-    padding: 3%;
-    height: 15em;
-    width: 30em;
+  grid-row: 2;
+  grid-column: 1;
+  padding: 3%;
+  height: 15em;
+  width: 30em;
 }
 
 #box-three {
-    grid-row: 2;
-    grid-column: 2 / 3;
-    padding: 3%;
-    height: 15em;
-    width: 37em;
+  grid-row: 2;
+  grid-column: 2 / 3;
+  padding: 3%;
+  height: 15em;
+  width: 37em;
 }
 
+#temperature {
+  text-align: center;
+  font-size: 8em;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 300;
+  padding-left: 0.1em;
+}
+
+#up-arrow,
+#down-arrow {
+  height: 4em;
+  width: auto;
+}
+
+#get-data {
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgba(200, 200, 200, 0.7);
+  color: white;
+  text-align: center;
+  height: 5em;
+  width: 4em;
+  font-size: 1em;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+#get-data:hover {
+  background-color: white;
+  color: rgba(128, 128, 128);
+}
+
+#box-three > div {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+}
+
+#arrows > div {
+  padding-right: 1.5em;
+}
+
+#location {
+  font-family: 'Yeseva One', cursive;
+  font-size: 3.5em;
+  letter-spacing: 0.1em;
+}
+
+#location-img {
+  height: 3.4em;
+  padding-right: 1em;
+}
+
+#time {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 3em;
+  letter-spacing: 0.2em;
+}
+
+#date {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 2em;
+  letter-spacing: 0.2em;
+}
+
+#search-img,
+#reset-img {
+  height: 2em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#search-group > * {
+  vertical-align: middle;
+  margin-top: 2.5em;
+}
+
+#search-location {
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgba(200, 200, 200, 0.7);
+  color: white;
+  text-align: center;
+  height: 2em;
+  width: 15em;
+  font-size: 1em;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+input::placeholder {
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+#box-two {
+  text-align: center;
+}
+
+#sky-header {
+  font-family: 'Yeseva One', cursive;
+  font-size: 3em;
+}
+
+label {
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 1.3em;
+  font-style: italic;
+  letter-spacing: 0.2em;
+}
+
+#weather {
+  margin-top: 2em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgba(200, 200, 200, 0.7);
+  color: white;
+  text-align: center;
+  height: 2em;
+  width: 15em;
+  font-size: 1em;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+.icon-buttons {
+  background-color: rgba(200, 200, 200, 0);
+  border: none;
+  width: 5em;
+  border-radius: 3em;
+}
+
+.icon-buttons:hover {
+  background-color: rgba(200, 200, 200, 0.5);
+}
+
+footer {
+  padding-top: 30px;
+  margin-top: 2vh;
+  margin-bottom: 2%;
+}
+
+.disclaimer {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  text-align: center;
+  color: white;
+}

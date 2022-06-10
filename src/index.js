@@ -3,6 +3,8 @@
 const temperature = document.querySelector('#temperature');
 const background = document.querySelector('html');
 const city = document.querySelector('#location');
+const sky = document.querySelector('#sky');
+const skyImage = document.querySelector('#sky-img');
 
 const tempState = {
   degree: 75,
@@ -15,6 +17,7 @@ const tempColorClass = [
   'temp-orange',
   'temp-red',
 ];
+
 const tempBackgroundClass = [
   'bg-desert',
   'bg-hot',
@@ -89,36 +92,46 @@ const updateCity = (event) => {
 };
 
 const findLatLon = (place) => {
-  return axios.get("http://127.0.0.1:8000/location", {
-    params: {
-      q: place
-    },
-  }).then(response => {
-    const lat = response.data[0].lat;
-    const lon = response.data[0].lon;
-    return {lat, lon};
-  }).catch(err => console.log({ err }));
+  return axios
+    .get('http://127.0.0.1:8000/location', {
+      params: {
+        q: place,
+      },
+    })
+    .then((response) => {
+      const lat = response.data[0].lat;
+      const lon = response.data[0].lon;
+      return { lat, lon };
+    })
+    .catch((err) => console.log({ err }));
 };
 
 const getTemp = (lat, lon) => {
-  return axios.get("http://127.0.0.1:8000/weather", {
-    params: {
-      lat: lat,
-      lon: lon
-    },
-  }).then(response => {
-    const temp = response.data.current.temp;
-    return Math.floor((temp - 273.15) * 9/5 + 32);
-  }).catch(err => console.log({ err }));
+  return axios
+    .get('http://127.0.0.1:8000/weather', {
+      params: {
+        lat: lat,
+        lon: lon,
+      },
+    })
+    .then((response) => {
+      const temp = response.data.current.temp;
+      return Math.floor(((temp - 273.15) * 9) / 5 + 32);
+    })
+    .catch((err) => console.log({ err }));
 };
 
 const getRealTimeData = async () => {
   const place = city.textContent;
-  const {lat, lon} = await findLatLon(place);
+  const { lat, lon } = await findLatLon(place);
   tempState.degree = await getTemp(lat, lon);
   updateTemp();
 };
 
+const updateSky = () => {
+  const selectedSky = sky.options[sky.selectedIndex].value;
+  skyImage.setAttribute('src', `assets/${selectedSky}.png`);
+}
 const registerEventHandlers = () => {
   const upButton = document.querySelector('#up-button');
   upButton.addEventListener('click', () => changeTempDegree(1));
@@ -126,8 +139,9 @@ const registerEventHandlers = () => {
   downButton.addEventListener('click', () => changeTempDegree(-1));
   const searchInput = document.querySelector('#search-location');
   searchInput.addEventListener('input', updateCity);
-  const getDataButton = document.querySelector("#get-data");
+  const getDataButton = document.querySelector('#get-data');
   getDataButton.addEventListener('click', getRealTimeData);
+  sky.addEventListener('change', updateSky);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);

@@ -44,7 +44,7 @@ section {
   text-align: center;
 }
 
-#weather-img {
+#sky-img {
   width: 7em;
   height: auto;
   padding-right: 0.4em;
@@ -177,7 +177,7 @@ label {
   letter-spacing: 0.2em;
 }
 
-#weather {
+#sky {
   margin-top: 2em;
   border-radius: 0.5em;
   border: none;
@@ -250,37 +250,37 @@ footer {
 }
 
 .bg-hot {
-    background: url(/assets/hot.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    transition: 1.5s ease-in;
-  }
+  background: url(/assets/hot.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition: 1.5s ease-in;
+}
 
 .bg-warm {
-    background: url(/assets/warm.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    transition: 1.5s ease-in;
-  }
+  background: url(/assets/warm.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition: 1.5s ease-in;
+}
 
-  .bg-chilly {
-    background: url(/assets/chilly.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    transition: 1.5s ease-in;
-  }
+.bg-chilly {
+  background: url(/assets/chilly.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition: 1.5s ease-in;
+}
 
-  .bg-cold {
-    background: url(/assets/cold.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    transition: 1.5s ease-in;
-  }
+.bg-cold {
+  background: url(/assets/cold.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  transition: 1.5s ease-in;
+}

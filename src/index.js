@@ -7,6 +7,7 @@ const searchInput = document.querySelector('#search-location');
 const sky = document.querySelector('#sky');
 const skyImage = document.querySelector('#sky-img');
 const date = document.querySelector('#date');
+const time = document.querySelector('#time');
 
 const months = [
   'January',
@@ -31,7 +32,16 @@ const getCurrentDate = () => {
   } ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
 };
 
-getCurrentDate();
+const getCurrentTime = () => {
+  const currentTime = new Date().toLocaleString('en-US');
+  const timeInfo = currentTime.split(" ");
+  const splitTime = timeInfo[1].split(":");
+  time.textContent = `${splitTime[0]}:${splitTime[1]} ${timeInfo[2]}`;
+};
+
+setInterval(getCurrentTime, 1000);
+
+setInterval(getCurrentDate, 1000);
 
 const tempState = {
   degree: 75,

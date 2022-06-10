@@ -121,3 +121,8 @@ Wave 6:
 [Wave 6: Resetting the City Name](./ada-project-docs/wave-06.md)
 
 [Optional Enhancements to inspire you](./ada-project-docs/optional-enhancements.md)
+
+## Attributes
+- Credit to [IconsDB](https://www.iconsdb.com/white-icons/white-weather-icons.html) for weather icons
+- [Google Fonts](https://fonts.google.com/icons?icon.set=Material+Icons&icon.query=location) for button icons
+- [Unsplash](https://unsplash.com/) for background display images

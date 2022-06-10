@@ -80,7 +80,8 @@ section {
   width: auto;
 }
 
-#get-data, #convert {
+#get-data,
+#convert {
   border-radius: 0.5em;
   border: none;
   background-color: rgba(200, 200, 200, 0.7);
@@ -94,7 +95,8 @@ section {
   margin-left: 2.3em;
 }
 
-#get-data:hover, #convert:hover {
+#get-data:hover,
+#convert:hover {
   background-color: white;
   color: rgba(128, 128, 128);
 }

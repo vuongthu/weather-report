@@ -39,9 +39,9 @@ const getCurrentTime = () => {
   time.textContent = `${splitTime[0]}:${splitTime[1]} ${timeInfo[2]}`;
 };
 
-setInterval(getCurrentTime, 1000);
+setInterval(getCurrentTime, 500);
 
-setInterval(getCurrentDate, 1000);
+setInterval(getCurrentDate, 500);
 
 const tempState = {
   degree: 75,
@@ -124,7 +124,7 @@ const updateTemp = () => {
   changeTempColor();
   let displayTemp;
   if (tempState.celcius) {
-    displayTemp = Math.floor((tempState.degree - 32) * 5/9);
+    displayTemp = Math.floor(((tempState.degree - 32) * 5) / 9);
     temperature.textContent = `${displayTemp}°C`;
   } else {
     displayTemp = tempState.degree;
@@ -135,7 +135,7 @@ const updateTemp = () => {
 const toggleTemp = () => {
   tempState.celcius = !tempState.celcius;
   updateTemp();
-}
+};
 
 const updateCity = (event) => {
   city.textContent = event.target.value;

@@ -62,23 +62,18 @@ const changeTempColor = () => {
 
 changeTempColor();
 
-const increaseTemp = () => {
-  tempState.degree += 1;
+const updateTemp = (value) => {
+  tempState.degree += value;
   changeTempColor();
   temperature.textContent = `${tempState.degree}°`;
 };
 
-const decreaseTemp = () => {
-  tempState.degree -= 1;
-  changeTempColor();
-  temperature.textContent = `${tempState.degree}°`;
-};
 
 const registerEventHandlers = () => {
   const upButton = document.querySelector('#up-button');
-  upButton.addEventListener('click', increaseTemp);
+  upButton.addEventListener('click', () => updateTemp(1));
   const downButton = document.querySelector('#down-button');
-  downButton.addEventListener('click', decreaseTemp);
+  downButton.addEventListener('click', () => updateTemp(-1));
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);

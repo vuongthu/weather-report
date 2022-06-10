@@ -34,8 +34,8 @@ const getCurrentDate = () => {
 
 const getCurrentTime = () => {
   const currentTime = new Date().toLocaleString('en-US');
-  const timeInfo = currentTime.split(" ");
-  const splitTime = timeInfo[1].split(":");
+  const timeInfo = currentTime.split(' ');
+  const splitTime = timeInfo[1].split(':');
   time.textContent = `${splitTime[0]}:${splitTime[1]} ${timeInfo[2]}`;
 };
 
@@ -45,6 +45,7 @@ setInterval(getCurrentDate, 1000);
 
 const tempState = {
   degree: 75,
+  celcius: false,
 };
 
 const tempColorClass = [
@@ -121,8 +122,20 @@ const changeTempDegree = (value) => {
 
 const updateTemp = () => {
   changeTempColor();
-  temperature.textContent = `${tempState.degree}°`;
+  let displayTemp;
+  if (tempState.celcius) {
+    displayTemp = Math.floor((tempState.degree - 32) * 5/9);
+    temperature.textContent = `${displayTemp}°C`;
+  } else {
+    displayTemp = tempState.degree;
+    temperature.textContent = `${displayTemp}°F`;
+  }
 };
+
+const toggleTemp = () => {
+  tempState.celcius = !tempState.celcius;
+  updateTemp();
+}
 
 const updateCity = (event) => {
   city.textContent = event.target.value;
@@ -186,6 +199,8 @@ const registerEventHandlers = () => {
   sky.addEventListener('change', updateSky);
   const resetButton = document.querySelector('#reset-button');
   resetButton.addEventListener('click', resetCity);
+  const convertButton = document.querySelector('#convert');
+  convertButton.addEventListener('click', toggleTemp);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);

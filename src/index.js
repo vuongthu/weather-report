@@ -3,8 +3,35 @@
 const temperature = document.querySelector('#temperature');
 const background = document.querySelector('html');
 const city = document.querySelector('#location');
+const searchInput = document.querySelector('#search-location');
 const sky = document.querySelector('#sky');
 const skyImage = document.querySelector('#sky-img');
+const date = document.querySelector('#date');
+
+const months = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+];
+
+const getCurrentDate = () => {
+  const currentDate = new Date();
+  const monthId = currentDate.getMonth();
+  date.textContent = `${
+    months[monthId]
+  } ${currentDate.getDate()}, ${currentDate.getFullYear()}`;
+};
+
+getCurrentDate();
 
 const tempState = {
   degree: 75,
@@ -131,17 +158,24 @@ const getRealTimeData = async () => {
 const updateSky = () => {
   const selectedSky = sky.options[sky.selectedIndex].value;
   skyImage.setAttribute('src', `assets/${selectedSky}.png`);
-}
+};
+
+const resetCity = () => {
+  city.textContent = 'San Diego, CA';
+  searchInput.value = '';
+};
+
 const registerEventHandlers = () => {
   const upButton = document.querySelector('#up-button');
   upButton.addEventListener('click', () => changeTempDegree(1));
   const downButton = document.querySelector('#down-button');
   downButton.addEventListener('click', () => changeTempDegree(-1));
-  const searchInput = document.querySelector('#search-location');
   searchInput.addEventListener('input', updateCity);
   const getDataButton = document.querySelector('#get-data');
   getDataButton.addEventListener('click', getRealTimeData);
   sky.addEventListener('change', updateSky);
+  const resetButton = document.querySelector('#reset-button');
+  resetButton.addEventListener('click', resetCity);
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);

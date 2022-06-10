@@ -1,15 +1,27 @@
 'use strict';
 
-
 const temperature = document.querySelector('#temperature');
-const background = document.querySelector("html");
+const background = document.querySelector('html');
+const city = document.querySelector('#location');
 
 const tempState = {
   degree: 75,
 };
 
-const tempColorClass = ['temp-blue', 'temp-teal', 'temp-green', 'temp-orange', 'temp-red'];
-const tempBackgroundClass = ['bg-desert', 'bg-hot', 'bg-warm', 'bg-chilly', 'bg-cold']
+const tempColorClass = [
+  'temp-blue',
+  'temp-teal',
+  'temp-green',
+  'temp-orange',
+  'temp-red',
+];
+const tempBackgroundClass = [
+  'bg-desert',
+  'bg-hot',
+  'bg-warm',
+  'bg-chilly',
+  'bg-cold',
+];
 
 const changeTempColor = () => {
   if (tempState.degree >= 91) {
@@ -29,7 +41,7 @@ const changeTempColor = () => {
     if (!background.classList.contains('bg-hot')) {
       background.classList.remove(...tempBackgroundClass);
       background.classList.add('bg-hot');
-    } 
+    }
   } else if (tempState.degree >= 65 && tempState.degree <= 80) {
     if (!temperature.classList.contains('temp-green')) {
       temperature.classList.remove(...tempColorClass);
@@ -57,7 +69,7 @@ const changeTempColor = () => {
       background.classList.remove(...tempBackgroundClass);
       background.classList.add('bg-cold');
     }
-  } 
+  }
 };
 
 changeTempColor();
@@ -68,12 +80,17 @@ const updateTemp = (value) => {
   temperature.textContent = `${tempState.degree}°`;
 };
 
+const updateCity = (event) => {
+  city.textContent = event.target.value;
+};
 
 const registerEventHandlers = () => {
   const upButton = document.querySelector('#up-button');
   upButton.addEventListener('click', () => updateTemp(1));
   const downButton = document.querySelector('#down-button');
   downButton.addEventListener('click', () => updateTemp(-1));
+  const searchInput = document.querySelector('#search-location');
+  searchInput.addEventListener('input', updateCity)
 };
 
 document.addEventListener('DOMContentLoaded', registerEventHandlers);

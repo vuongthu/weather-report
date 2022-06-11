@@ -143,7 +143,7 @@ const updateCity = (event) => {
 
 const findLatLon = (place) => {
   return axios
-    .get('http://127.0.0.1:8000/location', {
+    .get('https://thu-weather-app.herokuapp.com/location', {
       params: {
         q: place,
       },
@@ -158,7 +158,7 @@ const findLatLon = (place) => {
 
 const getTemp = (lat, lon) => {
   return axios
-    .get('http://127.0.0.1:8000/weather', {
+    .get('https://thu-weather-app.herokuapp.com/weather', {
       params: {
         lat: lat,
         lon: lon,

@@ -1,4 +1,6 @@
 'use strict';
+import 'regenerator-runtime/runtime';
+import axios from 'axios';
 
 const temperature = document.querySelector('#temperature');
 const background = document.querySelector('html');

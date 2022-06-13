@@ -11,6 +11,16 @@ const skyImage = document.querySelector('#sky-img');
 const date = document.querySelector('#date');
 const time = document.querySelector('#time');
 
+const skyImages = {
+  sunny: require('../assets/sunny.png'),
+  stormy: require('../assets/stormy.png'),
+  rainy: require('../assets/rainy.png'),
+  cloudy: require('../assets/cloudy.png'),
+  snowy: require('../assets/snowy.png'),
+  foggy: require('../assets/foggy.png'),
+  starry: require('../assets/starry.png'),
+};
+
 const months = [
   'January',
   'February',
@@ -182,7 +192,7 @@ const getRealTimeData = async () => {
 
 const updateSky = () => {
   const selectedSky = sky.options[sky.selectedIndex].value;
-  skyImage.setAttribute('src', `assets/${selectedSky}.png`);
+  skyImage.setAttribute('src', skyImages[selectedSky]);
 };
 
 const resetCity = () => {

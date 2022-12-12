@@ -10,6 +10,7 @@ const sky = document.querySelector('#sky');
 const skyImage = document.querySelector('#sky-img');
 const date = document.querySelector('#date');
 const time = document.querySelector('#time');
+const proxyUrl = 'https://weather-report-proxy.onrender.com';
 
 const skyImages = {
   sunny: require('../assets/sunny.png'),
@@ -155,7 +156,7 @@ const updateCity = (event) => {
 
 const findLatLon = (place) => {
   return axios
-    .get('https://thu-weather-app.herokuapp.com/location', {
+    .get(`${proxyUrl}/location`, {
       params: {
         q: place,
       },
@@ -170,7 +171,7 @@ const findLatLon = (place) => {
 
 const getTemp = (lat, lon) => {
   return axios
-    .get('https://thu-weather-app.herokuapp.com/weather', {
+    .get(`${proxyUrl}/weather`, {
       params: {
         lat: lat,
         lon: lon,
